@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const response = await fetch('https://jsonplaceholder.typicode.com/photos');
         const data = await response.json();
         setArray(data); 
       } catch (error) {
@@ -20,10 +20,12 @@ function App() {
 
   return (
     <>
+      <span>Danh sách</span>
       <ul>
         {array.map((item) => (
           <li key={item.id}>
-            {item.title} 
+            {item.title} <br />
+            <span> Url: {item.url}</span>
           </li>
         ))}
       </ul>
