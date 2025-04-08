@@ -1,25 +1,42 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import MainContent from '../components/MainContent'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import OverviewCards from './components/OverviewCards'
+import DetailedReport from './components/DetailedReport'
+import Projects from './pages/Projects';
+import Analytics from './pages/Analytics';
+import Messages from './pages/Messages';
+import Teams from './pages/Teams';
+import Integrations from './pages/Integrations';
+
 function App() {
   return (
-    <div>
-      <div class="container">
-        <div class="header"><Header/></div>
-        <div class="menu">
-            <Navbar/>
-        </div>
-        <div class="content">
-          <MainContent/>
+    <Router>
+      <div className="grid grid-cols-[16rem_1fr] h-screen">
+        <Sidebar />
+        <main className="bg-gray-50 p-6 overflow-y-auto">
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <OverviewCards />
+                  <DetailedReport />
+                </>
+              }
+            />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/teams" element={<Teams />} />
+            <Route path="/integrations" element={<Integrations />} />
+          </Routes>
+        </main>
       </div>
-      <div class="footer"> <Footer/>
-      </div>
-      </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
 export default App;
