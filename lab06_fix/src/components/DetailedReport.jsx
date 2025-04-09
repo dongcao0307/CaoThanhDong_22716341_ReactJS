@@ -122,7 +122,7 @@ export default function DetailedReport() {
                             <th className="text-left py-2 px-3">EDIT</th>
                         </tr>
                     </thead>
-                    {/* <tbody className="text-gray-700">
+                    <tbody className="text-gray-700">
                         {currentCustomers.map((item) => (
                             <tr key={item.id} className="border-t">
                                 <td className="py-2 px-3"><input type="checkbox" /></td>
@@ -156,7 +156,7 @@ export default function DetailedReport() {
                                 </td>
                             </tr>
                         ))}
-                    </tbody> */}
+                    </tbody>
                 </table>
 
                 {/* Pagination */}
