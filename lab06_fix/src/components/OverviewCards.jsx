@@ -26,20 +26,17 @@ const stats = [
 
 export default function OverviewCards() {
     return (
-        // <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        //     {stats.map((stat, idx) => (
-        //         <div key={idx} className={`rounded-xl p-4 ${stat.bg}`}>
-        //             <div className="flex justify-between items-center mb-2">
-        //                 <h2 className="text-gray-600 font-medium">{stat.title}</h2>
-        //                 {stat.icon}
-        //             </div>
-        //             <p className="text-2xl font-bold text-gray-800">{stat.value}</p>
-        //             <p className="text-sm text-green-500">{stat.change} period of change</p>
-        //         </div>
-        //     ))}
-        // </div>
-        <div className="border border-col-6 flex justify-between items-center mb-6">
-      <h1>OverviewCards</h1>
-    </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            {stats.map((stat, idx) => (
+                <div key={idx} className={`rounded-xl p-4 ${stat.bg}`}>
+                    <div className="flex justify-between items-center mb-2">
+                        <h2 className="text-gray-600 font-medium">{stat.title}</h2>
+                        {stat.icon}
+                    </div>
+                    <p className="text-2xl font-bold text-gray-800">{stat.value}</p>
+                    <p className="text-sm text-green-500">{stat.change} period of change</p>
+                </div>
+            ))}
+        </div>
     );
 }
